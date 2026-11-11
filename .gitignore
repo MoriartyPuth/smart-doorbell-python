@@ -1,6 +1,0 @@
-# Real passwords and tokens: never commit
-secrets.py
-
-__pycache__/
-*.pyc
-.DS_Store

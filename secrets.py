@@ -1,6 +1,5 @@
-# Copy this file to secrets.py (same folder) and fill in your own values.
-# secrets.py is git-ignored so tokens never get committed.
-# Upload secrets.py to the board together with the other files.
+# Fill in your own values, then upload this file to the board with the others.
+# Do not push this file to GitHub after putting real passwords and tokens in it.
 
 # ---- WiFi (the ESP32 only supports 2.4 GHz networks) ----
 WIFI_SSID = "your-wifi-name"

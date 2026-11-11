@@ -45,11 +45,6 @@ def bell_triggered():
     return True
 
 
-def ir_level():
-    """Raw IR pin reading (for the hardware test)."""
-    return _ir.value()
-
-
 def motion_detected():
     """True while the PIR sensor sees movement. Always False if no PIR is fitted."""
     return _pir is not None and _pir.value() == 1
