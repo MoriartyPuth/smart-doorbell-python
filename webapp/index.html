@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- Smart Doorbell control panel. Styles are in style.css, behaviour in app.js.
+     These three files are uploaded to the board and served by bridge/web_bridge.py. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Doorbell</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Smart Doorbell</h1>
+    <span id="link" class="dot off">connecting</span>
+  </header>
+
+  <section class="card" id="door">
+    <div id="waiting"></div>
+    <div id="doorState">...</div>
+    <div class="row">
+      <button class="unlock" onclick="act('unlock')">Unlock</button>
+      <button class="lock" onclick="act('lock')">Lock</button>
+    </div>
+    <div class="row">
+      <button id="muteBtn" onclick="act('mute')">Mute buzzer</button>
+      <button onclick="act('photo')">Photo to Telegram</button>
+    </div>
+  </section>
+
+  <section class="card stats">
+    <div><span>Visitors</span><b id="visitors">-</b></div>
+    <div><span>Last visit</span><b id="lastVisit">-</b></div>
+    <div><span>WiFi signal</span><b id="rssi">-</b></div>
+    <div><span>Uptime</span><b id="uptime">-</b></div>
+  </section>
+
+  <section class="card">
+    <h2>Message for the visitor</h2>
+    <form onsubmit="sendMessage(event)">
+      <input id="msg" maxlength="32" placeholder="e.g. Coming in 2 minutes" autocomplete="off">
+      <button type="submit">Show</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Live camera</h2>
+    <img id="stream" alt="Live camera stream">
+    <div id="noCam">Camera is offline.</div>
+  </section>
+
+  <div id="note"></div>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>

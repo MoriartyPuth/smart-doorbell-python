@@ -1,0 +1,36 @@
+/* Look of the control panel (index.html). Dark theme, phone-first. */
+
+:root { --bg:#0f1216; --card:#1a1f26; --line:#2a313b; --text:#e8ecf1; --dim:#8b95a3;
+        --red:#e5484d; --green:#30a46c; --blue:#3e8bff; }
+* { box-sizing: border-box; }
+body { margin:0; padding:16px; background:var(--bg); color:var(--text);
+       font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width:520px; margin:0 auto; display:grid; gap:14px; }
+header { display:flex; justify-content:space-between; align-items:center; }
+h1 { font-size:1.25rem; margin:0; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; }
+.dot { font-size:.8rem; color:var(--dim); }
+.dot::before { content:""; display:inline-block; width:8px; height:8px; border-radius:50%;
+               background:var(--green); margin-right:6px; }
+.dot.off::before { background:var(--red); }
+#door { text-align:center; }
+#doorState { font-size:1.9rem; font-weight:700; margin:4px 0 2px; }
+#doorState.locked { color:var(--red); }
+#doorState.unlocked { color:var(--green); }
+#waiting { color:var(--blue); font-weight:600; min-height:1.4em; }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+button { font:inherit; font-weight:600; color:#fff; border:0; border-radius:10px;
+         padding:13px; cursor:pointer; background:var(--line); }
+button:active { transform:scale(.98); }
+.unlock { background:var(--green); }
+.lock { background:var(--red); }
+.stats { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.stats div span { display:block; color:var(--dim); font-size:.78rem; }
+.stats div b { font-size:1.05rem; font-variant-numeric:tabular-nums; }
+form { display:flex; gap:8px; }
+input { flex:1; min-width:0; font:inherit; color:var(--text); background:var(--bg);
+        border:1px solid var(--line); border-radius:10px; padding:12px; }
+h2 { font-size:.85rem; color:var(--dim); margin:0 0 10px; font-weight:600; }
+#stream { width:100%; border-radius:10px; background:#000; display:none; }
+#noCam { color:var(--dim); font-size:.9rem; }
+#note { text-align:center; color:var(--dim); font-size:.85rem; min-height:1.3em; }
